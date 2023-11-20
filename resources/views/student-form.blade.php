@@ -11,7 +11,8 @@
 </head>
 <body class="container">
 
-   <form class="form">
+   <form class="form" method="post" action="{{url('student/create')}}">
+      @csrf
       <div class="form-group">
          <label for="Name">Name</label>
          <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">

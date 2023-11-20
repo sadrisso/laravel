@@ -24,5 +24,10 @@ class StudentController extends Controller
 
     }
 
+    function view(){
+        $student = Student::all();
+        return view('student-view', compact('student'));
+    }
+
     
 }
