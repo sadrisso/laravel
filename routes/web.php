@@ -15,3 +15,4 @@ Route::get('/about', function(){
 Route::get('student/create', [StudentController::class, 'index']);
 Route::post('student/create', [StudentController::class, 'store']);
 Route::get('student/view', [StudentController::class, 'view']);
+Route::get('student/delete/{id}', [StudentController::class, 'delete']);

@@ -29,5 +29,10 @@ class StudentController extends Controller
         return view('student-view', compact('student'));
     }
 
+    function delete($id){
+        Student::find($id)->delete();
+        return redirect('student/view');
+    }
+
     
 }
