@@ -17,12 +17,12 @@
       <div class="form-group">
          <label for="Name">Name</label>
          <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" 
-         value="{{$student->name}}">
+         value="{{$student->name ?? '' }}">
       </div>
       <div class="form-group">
          <label for="exampleInputEmail1">Email address</label>
          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" 
-         value="{{$student->email}}">
+         value="{{$student->email ?? '' }}">
       </div>
       <div class="form-group">
          <label for="exampleInputPassword1">Password</label>
