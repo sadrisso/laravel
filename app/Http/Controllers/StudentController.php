@@ -8,7 +8,9 @@ use App\Models\Student;
 class StudentController extends Controller
 {
     function index(){
-        return view('student-form');
+        $url = url('student/create');
+        $title = "Add Student";
+        return view('student-form', compact('url', 'title'));
     }
 
     function store(Request $req, Student $std){
@@ -31,6 +33,35 @@ class StudentController extends Controller
 
     function delete($id){
         Student::find($id)->delete();
+        return redirect('student/view');
+    }
+
+    function edit($id){
+        $student = Student::find($id);
+        if(is_null($student)){
+            return redirect('student/view');
+        }else{
+            $url = url('student/update'). '/' . $id;
+            $title = "Update Student";
+            return view('student-form', compact('url', 'title', 'student'));
+        }
+    }
+
+    function update($id, Request $req){
+
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $student = Student::find($id);
+
+        $student->name = $req['name'];
+        $student->email = $req['email'];
+        $student->password = $req['password'];
+        $student->save();
+
         return redirect('student/view');
     }
 

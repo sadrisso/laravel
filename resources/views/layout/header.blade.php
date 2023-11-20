@@ -17,10 +17,10 @@
             <a class="nav-link active" href="#">Student</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="#">Add Student</a>
+            <a class="nav-link" href="{{url('student/create')}}">Add Student</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link " href="#">View Student</a>
+            <a class="nav-link " href="{{url('student/view')}}">View Student</a>
          </li>
       </ul>
    </nav>

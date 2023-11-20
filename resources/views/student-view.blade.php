@@ -27,7 +27,7 @@
             <td>{{$std->email}}</td>
             <td>{{$std->password}}</td>
             <td>
-               <a href="{{url('')}}" class="btn btn-success">Edit</a>
+               <a href="{{url('student/edit')}}/{{$std->id}}" class="btn btn-success">Edit</a>
                <a href="{{url('student/delete')}}/{{$std->id}}" class="btn btn-danger">Delete</a>
             </td>
          </tr>

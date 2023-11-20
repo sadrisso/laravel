@@ -11,15 +11,18 @@
 </head>
 <body class="container">
 
-   <form class="form" method="post" action="{{url('student/create')}}">
+   <form class="form" method="post" action="{{$url}}">
+      <h2>{{$title}}</h2>
       @csrf
       <div class="form-group">
          <label for="Name">Name</label>
-         <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+         <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" 
+         value="{{$student->name}}">
       </div>
       <div class="form-group">
          <label for="exampleInputEmail1">Email address</label>
-         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
+         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" 
+         value="{{$student->email}}">
       </div>
       <div class="form-group">
          <label for="exampleInputPassword1">Password</label>
