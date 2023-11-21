@@ -14,6 +14,10 @@ class StudentController extends Controller
     }
 
     function store(Request $req, Student $std){
+
+        // demo($req->all());
+        // die;
+
         $req->validate([
             'name' => 'required',
             'email' => 'required',

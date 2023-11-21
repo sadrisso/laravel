@@ -34,6 +34,7 @@
          @endforeach
       </tbody>
    </table>
+   <a href="{{url('student/create')}}" class="btn btn-dark form-control">Add</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
