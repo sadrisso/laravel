@@ -17,4 +17,14 @@ class Student extends Model
         'email',
         'password'
     ];
+
+    //Mutator
+    function setNameAttribute($value){
+        $this->attributes['name'] = ucwords($value);
+    }
+
+    //Accessor
+    function getNameAttribute($value){
+        return ucfirst($value);
+    }
 };
