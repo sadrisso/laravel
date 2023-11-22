@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use Symfony\Component\HttpFoundation\Request;
 
 
 Route::get('/', function () {
@@ -18,3 +19,21 @@ Route::get('student/view', [StudentController::class, 'view']);
 Route::get('student/delete/{id}', [StudentController::class, 'delete']);
 Route::get('student/edit/{id}', [StudentController::class, 'edit']);
 Route::post('student/update/{id}',[ StudentController::class, 'update']);
+
+
+Route::get('get-all-session', function(){
+    $session = session()->all();
+    return demo($session);
+});
+
+Route::get('set-session', function(Request $req){
+    $req->session()->put('Name', 'Shoeb Drisso');
+    $req->session()->put('Address', 'Rangpur');
+    return redirect('get-all-session');
+});
+
+Route::get('delete-session', function(){
+    session()->forget('Name', 'Shoeb Drisso');
+    session()->forget('Address', 'Rangpur');
+    return redirect('get-all-session');
+});

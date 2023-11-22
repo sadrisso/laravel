@@ -14,7 +14,9 @@
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <ul class="nav ">
          <li class="nav-item">
-            <a class="nav-link active" href="#">Student</a>
+            <a class="nav-link active" href="#">
+               @if(session()->has('Name')) {{session()->get('Name')}} @else Guest @endif
+            </a>
          </li>
          <li class="nav-item">
             <a class="nav-link" href="{{url('student/create')}}">Add Student</a>
