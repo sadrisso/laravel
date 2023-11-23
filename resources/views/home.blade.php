@@ -19,7 +19,6 @@
 
    @section('main-section')
       <h1>Home Page</h1>
-      <a href="{{url('student/create')}}" class="btn btn-warning">Add</a>
    @endSection
 
 

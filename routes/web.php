@@ -29,6 +29,7 @@ Route::get('get-all-session', function(){
 Route::get('set-session', function(Request $req){
     $req->session()->put('Name', 'Shoeb Drisso');
     $req->session()->put('Address', 'Rangpur');
+    $req->session()->flash('Action', 'Success');
     return redirect('get-all-session');
 });
 
@@ -37,3 +38,7 @@ Route::get('delete-session', function(){
     session()->forget('Address', 'Rangpur');
     return redirect('get-all-session');
 });
+
+Route::get('student/trash', [StudentController::class, 'trash']);
+Route::get('student/restore/{id}', [StudentController::class, 'restore']);
+Route::get('student/force-delete/{id}', [StudentController::class, 'forceDelete']);

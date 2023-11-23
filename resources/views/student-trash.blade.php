@@ -7,10 +7,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 <link rel="stylesheet" href="style.css">
-<title>View</title>
+<title>Trash</title>
 </head>
 <body class="container">
-
 
    <table class="table">
       <thead>
@@ -28,15 +27,14 @@
             <td>{{$std->email}}</td>
             <td>{{$std->password}}</td>
             <td>
-               <a href="{{url('student/edit')}}/{{$std->id}}" class="btn btn-success">Edit</a>
-               <a href="{{url('student/delete')}}/{{$std->id}}" class="btn btn-danger">Trash</a>
+               <a href="{{url('student/restore')}}/{{$std->id}}" class="btn btn-success">Restore</a>
+               <a href="{{url('student/force-delete')}}/{{$std->id}}" class="btn btn-danger">Delete</a>
             </td>
          </tr>
          @endforeach
       </tbody>
    </table>
-   <a href="{{url('student/create')}}" class="btn btn-warning form-control">Add</a>
-   <a href="{{url('student/trash')}}" class="btn btn-Danger form-control">Go to trash</a>
+   <a href="{{url('student/view')}}" class="btn btn-primary form-control">View</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>

@@ -35,9 +35,24 @@ class StudentController extends Controller
         return view('student-view', compact('student'));
     }
 
+    function trash(){
+        $student = Student::onlyTrashed()->get();
+        return view('student-trash', compact('student'));
+    }
+
     function delete($id){
         Student::find($id)->delete();
         return redirect('student/view');
+    }
+
+    function restore($id){
+        Student::withTrashed()->find($id)->restore();
+        return redirect('student/restore');
+    }
+
+    function forceDelete($id){
+        Student::withTrashed()->find($id)->forceDelete();
+        return redirect()->back();
     }
 
     function edit($id){
@@ -69,5 +84,4 @@ class StudentController extends Controller
         return redirect('student/view');
     }
 
-    
 }
